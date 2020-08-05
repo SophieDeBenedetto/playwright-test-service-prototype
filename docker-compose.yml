@@ -1,0 +1,10 @@
+version: "3"
+services:
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/github
+    labels:
+      - "playwright_tests"

@@ -1,0 +1,25 @@
+{
+    "name": "github-browser-tests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^26.2.2",
+        "playwright": "^1.2.1",
+        "ts-jest": "^26.1.4"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "jsdom",
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "./tsconfig.json"
+            }
+        }
+    }
+}
