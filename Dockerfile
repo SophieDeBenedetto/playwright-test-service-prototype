@@ -62,6 +62,7 @@ RUN apt-get update && apt-get install -y xvfb
 # USER pwuser
 
 COPY --chown=root:root . /app
-
+RUN npm --prefix /app install
+RUN node /app/node_modules/playwright/install.js
 COPY scripts/test.sh /
 ENTRYPOINT ["/test.sh"]
