@@ -61,7 +61,7 @@ RUN apt-get update && apt-get install -y xvfb
 # Run everything after as non-privileged user.
 # USER pwuser
 
-COPY --chown=root:root . /
+COPY --chown=root:root . /app
 
-# COPY scripts/test.sh /
-ENTRYPOINT ["/scripts/test.sh"]
+COPY scripts/test.sh /
+ENTRYPOINT ["/test.sh"]

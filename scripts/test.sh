@@ -3,6 +3,6 @@
 echo "RUNNING test.sh"
 echo "ls:"
 echo `ls`
-npm install
-node ./node_modules/playwright/install.js
-npm test
+npm --prefix /app install
+node /app/node_modules/playwright/install.js
+npm --prefix /app test
