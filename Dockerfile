@@ -63,5 +63,5 @@ RUN apt-get update && apt-get install -y xvfb
 
 COPY --chown=root:root . /
 
-COPY scripts/test.sh /
-ENTRYPOINT ["/test.sh"]
+# COPY scripts/test.sh /
+ENTRYPOINT ["/scripts/test.sh"]
