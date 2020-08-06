@@ -63,8 +63,5 @@ RUN apt-get update && apt-get install -y xvfb
 
 COPY --chown=root:root . /
 
-# WORKDIR /github/workspace
-RUN npm install
-RUN node ./node_modules/playwright/install.js
 COPY scripts/test.sh /
 ENTRYPOINT ["/test.sh"]
