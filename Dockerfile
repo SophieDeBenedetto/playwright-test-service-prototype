@@ -64,9 +64,9 @@ RUN apt-get update && apt-get install -y xvfb
 # Run everything after as non-privileged user.
 USER pwuser
 
-COPY --chown=pwuser:pwuser . /home/pwuser/github
+COPY --chown=pwuser:pwuser . /github/workspace
 
-# WORKDIR /home/pwuser/github/
+WORKDIR /github/workspace
 RUN npm install
 RUN node ./node_modules/playwright/install.js
 COPY scripts/test.sh /
