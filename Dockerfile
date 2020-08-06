@@ -53,20 +53,17 @@ RUN apt-get update && apt-get install -y libdbus-glib-1-2 \
 
 RUN apt-get update && apt-get install -y ffmpeg
 
-# 7. Add user so we don't need --no-sandbox in Chromium
-RUN groupadd -r pwuser && useradd -r -g pwuser -G audio,video pwuser \
-    && mkdir -p /home/pwuser/Downloads \
-    && chown -R pwuser:pwuser /home/pwuser
+
 
 # 8. (Optional) Install XVFB if there's a need to run browsers in headful mode
 RUN apt-get update && apt-get install -y xvfb
 
 # Run everything after as non-privileged user.
-USER pwuser
+# USER pwuser
 
-COPY --chown=pwuser:pwuser . /github/workspace
+COPY --chown=root:root . /
 
-WORKDIR /github/workspace
+# WORKDIR /github/workspace
 RUN npm install
 RUN node ./node_modules/playwright/install.js
 COPY scripts/test.sh /
