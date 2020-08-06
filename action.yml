@@ -1,0 +1,5 @@
+name: 'GitHub Playwright Tests'
+description: 'Execute e2e tests against production dotcom using Playwright + Jest'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
