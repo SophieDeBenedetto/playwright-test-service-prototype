@@ -66,7 +66,7 @@ USER pwuser
 
 COPY --chown=pwuser:pwuser . /home/pwuser/github
 
-WORKDIR /home/pwuser/github/
+# WORKDIR /home/pwuser/github/
 RUN npm install
 RUN node ./node_modules/playwright/install.js
 COPY scripts/test.sh /
