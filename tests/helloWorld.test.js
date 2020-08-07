@@ -1,6 +1,8 @@
 const {chromium, firefox, webkit} = require('playwright');
 const expect = require('expect');
-let browser;
+let chrome;
+let firefoxBrowser;
+let webkitBrowser;
 let chromePage;
 let firefoxPage;
 let webkitPage;

@@ -54,15 +54,9 @@ RUN apt-get update && apt-get install -y libdbus-glib-1-2 \
 RUN apt-get update && apt-get install -y ffmpeg
 
 
-
-# 8. (Optional) Install XVFB if there's a need to run browsers in headful mode
+# 7. (Optional) Install XVFB if there's a need to run browsers in headful mode
 RUN apt-get update && apt-get install -y xvfb
 
-# Run everything after as non-privileged user.
-# USER pwuser
-
 COPY --chown=root:root . /app
-RUN npm --prefix /app install
-RUN node /app/node_modules/playwright/install.js
 COPY scripts/test.sh /
 ENTRYPOINT ["/test.sh"]
