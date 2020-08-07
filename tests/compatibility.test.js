@@ -25,7 +25,7 @@ describe('chrome', () => {
 
   test('has the correct title', async () => {
     await chromePage.goto('https://www.github.com/');
-    await chromePage.screenshot({ path: `/app/artifacts/screenshots/chrome.png` });
+    await chromePage.screenshot({ path: `/github/workspace/artifacts/chrome.png` });
     expect(await chromePage.title()).toBe('The world’s leading software development platform · GitHub');
   });
 });
@@ -46,7 +46,7 @@ describe('firefox', () => {
 
   test('has the correct title', async () => {
     await firefoxPage.goto('https://www.github.com/');
-    await firefoxPage.screenshot({ path: `/app/artifacts/screenshots/firefox.png` });
+    await firefoxPage.screenshot({ path: `/github/workspace/artifacts/firefox.png` });
     expect(await firefoxPage.title()).toBe('The world’s leading software development platform · GitHub');
   });
 });
@@ -67,7 +67,7 @@ describe('webkit', () => {
 
   test('has the correct title', async () => {
     await webkitPage.goto('https://www.github.com/');
-    await webkitPage.screenshot({ path: `/app/artifacts/screenshots/webkit.png` });
+    await webkitPage.screenshot({ path: `/github/workspace/artifacts/webkit.png` });
     expect(await webkitPage.title()).toBe('The world’s leading software development platform · GitHub');
   });
 });

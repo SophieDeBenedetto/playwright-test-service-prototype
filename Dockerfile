@@ -59,9 +59,6 @@ RUN apt-get update && apt-get install -y xvfb
 
 COPY --chown=root:root . /app
 
-RUN mkdir -p /app/artifacts
-RUN mkdir -p /app/artifacts/screenshots
-
 COPY scripts/test.sh /
 USER root
 ENTRYPOINT ["/test.sh"]
