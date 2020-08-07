@@ -58,5 +58,10 @@ RUN apt-get update && apt-get install -y ffmpeg
 RUN apt-get update && apt-get install -y xvfb
 
 COPY --chown=root:root . /app
+
+# RUN mkdir /app/artifacts
+# RUN mdkir /app/artifacts/screenshots
+
 COPY scripts/test.sh /
+USER root
 ENTRYPOINT ["/test.sh"]
