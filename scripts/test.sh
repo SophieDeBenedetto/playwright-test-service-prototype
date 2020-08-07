@@ -2,5 +2,5 @@
 
 npm --prefix /app install
 node /app/node_modules/playwright/install.js
-sudo chown -R root:root /github/home/.cache/ms-playwright/firefox-1122
+chown -R root:root /github/home/.cache/ms-playwright/firefox-1122
 DEBUG=pw:browser* npm --prefix /app test
