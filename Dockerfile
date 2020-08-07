@@ -57,10 +57,11 @@ RUN apt-get update && apt-get install -y ffmpeg
 # 7. (Optional) Install XVFB if there's a need to run browsers in headful mode
 RUN apt-get update && apt-get install -y xvfb
 
-COPY --chown=root:root . /app
+COPY package* /app/
+RUN npm ci --prefix /app
 
-RUN mkdir -p /app/artifacts
-RUN mkdir -p /app/artifacts/screenshots
+COPY . /app
 
-COPY scripts/test.sh /
-ENTRYPOINT ["/test.sh"]
+WORKDIR /app
+
+ENTRYPOINT ["/app/scripts/test.sh"]
