@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "jest --outputFile=artifacts/results.json --json"
+        "test": "jest --outputFile=/app/artifacts/results.json --json"
     },
     "author": "",
     "license": "ISC",

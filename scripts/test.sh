@@ -2,4 +2,4 @@
 
 npm --prefix /app install
 node /app/node_modules/playwright/install.js
-npm --prefix /app test
+DEBUG=pw:browser* npm --prefix /app test
