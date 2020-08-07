@@ -63,5 +63,4 @@ RUN mkdir -p /app/artifacts
 RUN mkdir -p /app/artifacts/screenshots
 
 COPY scripts/test.sh /
-USER root
 ENTRYPOINT ["/test.sh"]
